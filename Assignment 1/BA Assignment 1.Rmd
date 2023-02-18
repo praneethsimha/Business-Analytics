@@ -1,0 +1,48 @@
+---
+title: "BA Assignment 1"
+author: "Praneeth Simha"
+date: "2023-02-18"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+```{r}
+#1 Installed the ISLR library using the command install.packages(ISLR)
+#install.packages(ISLR)
+
+```
+
+```{r}
+#2 Calling the ISLR library , summary of carseats and finding the no of rows 
+library(ISLR)
+summary(Carseats)
+nrow(Carseats)
+#There are 400 rows in the following dataset 
+```
+```{r}
+#3 Finding the maximum value of advertising attribute 
+max(Carseats$Advertising)
+# 29 is the maximum value in the advetising attribute
+```
+```{r}
+#4 Finding the IQR value of price attribute 
+IQR(Carseats$Price)
+#The IQR of price attribute is 31 
+```
+```{r}
+#5 Plotting the sales over price and finding the correlation 
+library(ggplot2)
+ggplot(Carseats)+
+  aes(
+    x=Sales,
+    y=Price
+  )+
+  geom_point(shape="square",size=1.2,colour="red")+
+  theme_minimal()
+#There is negative correlation between the price of the carseats and the no of units sold, which suggest that customers are more likely to purchase lower priced carseats
+```
+
+
+
+
